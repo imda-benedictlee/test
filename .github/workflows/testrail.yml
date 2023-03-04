@@ -23,8 +23,8 @@ jobs:
           trcli -y \
             -h https://t2po.testrail.io/ \
             --project "Test Project" \
-            -u $TESTRAIL_USERNAME \
-            -p $TESTRAIL_PASSWORD \
+            -u env.TESTRAIL_USERNAME \
+            -p env.TESTRAIL_PASSWORD \
             parse_junit \
             --title "Playwright Automated Test Run" \
             --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
