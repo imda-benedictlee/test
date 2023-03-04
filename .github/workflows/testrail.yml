@@ -28,4 +28,4 @@ jobs:
             parse_junit \
             --title "Playwright Automated Test Run" \
             --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
-            -f "./test-results/junit-report.xml"
+            -f "./js/test-results/junit-report.xml"
