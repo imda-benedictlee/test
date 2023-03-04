@@ -1,7 +1,7 @@
 name: send-results-to-testrail
 on: [workflow_dispatch]
 env:
-  TESTRAIL_USERNAME: benedict_lee@imda.gov.sg,
+  TESTRAIL_USERNAME: benedict_lee@imda.gov.sg
   TESTRAIL_PASSWORD: p1nYhETL/2vREkWVURS9
 jobs:
   send-test-results-to-testrail:
@@ -23,8 +23,8 @@ jobs:
           trcli -y \
             -h https://t2po.testrail.io/ \
             --project "Test Project" \
-            -u env.TESTRAIL_USERNAME \
-            -p env.TESTRAIL_PASSWORD \
+            -u $TESTRAIL_USERNAME \
+            -p $TESTRAIL_PASSWORD \
             parse_junit \
             --title "Playwright Automated Test Run" \
             --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
