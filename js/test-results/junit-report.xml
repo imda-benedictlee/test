@@ -1,0 +1,246 @@
+<testsuites id="" name="" tests="30" failures="3" skipped="22" errors="0" time="1.279530000001192">
+<testsuite name="graphql/project/mutations.spec.js" timestamp="1677910388306" hostname="" tests="13" failures="2" skipped="6" time="0.492" errors="0">
+<testcase name="Get Project Get Projects" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Projects" time="0.113">
+</testcase>
+<testcase name="Get Project Get Project By Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Project ID" time="0.076">
+<failure message="queries.spec.js:75:3 Get Project By Project ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project/queries.spec.js:75:3 › Get Project › Get Project By Project ID ======
+
+    TypeError: Cannot read properties of null (reading 'projectInfo')
+
+      90 |
+      91 |     // Assert Response
+    > 92 |     expect(output.projectInfo.name).toBe(projectInfoObj.projectInfo.name)
+         |                   ^
+      93 |     expect(output.projectInfo.description).toBe(projectInfoObj.projectInfo.description)
+      94 |     expect(output.projectInfo.reportTitle).toBe(projectInfoObj.projectInfo.reportTitle)
+      95 |     expect(output.projectInfo.company).toBe(projectInfoObj.projectInfo.company)
+
+        at /home/benflop/GitHub/test/js/tests/graphql/project/queries.spec.js:92:19
+]]>
+</failure>
+</testcase>
+<testcase name="Get Project Get Project By Invalid Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Invalid Project ID" time="0.049">
+</testcase>
+<testcase name="Get Project Get Project By Empty Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Empty Project ID" time="0.052">
+</testcase>
+<testcase name="Get Reports Get Report By Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Project ID" time="0.08">
+<failure message="queries.spec.js:134:3 Get Report By Project ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project/queries.spec.js:134:3 › Get Reports › Get Report By Project ID ======
+
+    TypeError: Cannot read properties of null (reading 'report')
+
+      146 |     // Get Report directly from MongoDB
+      147 |     const query = { _id: ObjectId("63c9fa927bb6a2b36229fa00") }
+    > 148 |     const reportId = (await projects.findOne(query)).report
+          |                                                      ^
+      149 |
+      150 |     const query2 = { _id: ObjectId(reportId) }
+      151 |     const reportInfoObj = (await reports.findOne(query2))
+
+        at /home/benflop/GitHub/test/js/tests/graphql/project/queries.spec.js:148:54
+]]>
+</failure>
+</testcase>
+<testcase name="Get Reports Get Report By Invalid Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Invalid Project ID" time="0.071">
+</testcase>
+<testcase name="Get Reports Get Report By Empty Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Empty Project ID" time="0.05">
+</testcase>
+<testcase name="Create Project" classname="[chromium] › graphql/project/mutations.spec.js › Create Project" time="0.001">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Update Project" classname="[chromium] › graphql/project/mutations.spec.js › Update Project" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Delete Project" classname="[chromium] › graphql/project/mutations.spec.js › Delete Project" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Clone Project" classname="[chromium] › graphql/project/mutations.spec.js › Clone Project" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Generate Report" classname="[chromium] › graphql/project/mutations.spec.js › Generate Report" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Cancel Test Run" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="graphql/project-template/mutations.spec.js" timestamp="1677910388306" hostname="" tests="17" failures="1" skipped="16" time="0.098" errors="0">
+<testcase name="Get Project Template Get Project Templates" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Templates" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Get Project Template Get Project Template by Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Project Template Id" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Get Project Template Get Project Template by Invalid Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Invalid Project Template Id" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Get Project Template Get Project Template by Empty Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Empty Project Template Id" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Create Project Template Create Project Template with Valid Inputs" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Valid Inputs" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Create Project Template Create Project Template with NULL Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with NULL Project Information" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Create Project Template Create Project Template with Integer Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Integer Project Information" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Create Project Template Create Project Template with Empty Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Project Information" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Create Project Template Create Project Template with Invalid Global Variable" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Invalid Global Variable" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Create Project Template Create Project Template with Empty Global Variable" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Global Variable" time="0.098">
+<failure message="mutations.spec.js:407:5 Create Project Template with Empty Global Variable" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:407:5 › Create Project Template › Create Project Template with Empty Global Variable 
+
+    TypeError: Cannot read properties of null (reading 'globalVars')
+
+      444 |
+      445 |         // Assert Response
+    > 446 |         expect(projectTemplateInfo.globalVars.key).toBe(projectTemplateInfoObj.globalVars.key)
+          |                                                                                ^
+      447 |         expect(projectTemplateInfo.globalVars.value).toBe(projectTemplateInfoObj.globalVars.value)
+      448 |
+      449 |         // Get New Count of Records
+
+        at /home/benflop/GitHub/test/js/tests/graphql/project-template/mutations.spec.js:446:80
+]]>
+</failure>
+</testcase>
+<testcase name="Create Project Template Create Project Template with Invalid Pages" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Invalid Pages" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Create Project Template Create Project Template with Empty Pages" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Pages" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Clone Project Template" classname="[chromium] › graphql/project-template/mutations.spec.js › Clone Project Template" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Delete Project Template Delete Project Template by Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Project Template ID" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Delete Project Template Delete Project Template by Invalid Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Invalid Project Template ID" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Delete Project Template Delete Project Template by Empty Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Empty Project Template ID" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Update Project Template" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
