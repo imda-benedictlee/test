@@ -1,8 +1,8 @@
 name: send-results-to-testrail
 on: [workflow_dispatch]
 env:
-  TESTRAIL_USERNAME: benedict_lee@imda.gov.sg
-  TESTRAIL_PASSWORD: p1nYhETL/2vREkWVURS9
+  TESTRAIL_USERNAME: ${{ secrets.TESTRAIL_USERNAME }}
+  TESTRAIL_PASSWORD: ${{ secrets.TESTRAIL_PASSWORD }}
 jobs:
   send-test-results-to-testrail:
     runs-on: ubuntu-22.04
