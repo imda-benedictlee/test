@@ -21,7 +21,7 @@ jobs:
         run: |
           pip install trcli
           trcli -y \
-            -h https://t2po.testrail.io/ \
+            -h https://t2t2.testrail.io/ \
             --project "Test Project" \
             -u $TESTRAIL_USERNAME \
             -p $TESTRAIL_PASSWORD \
