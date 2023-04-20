@@ -21,11 +21,11 @@ jobs:
         run: |
           pip install trcli
           trcli -y \
-            -h https://t2t2.testrail.io/ \
-            --project "Test Project" \
+            -h https://imdabtg.testrail.io/ \
+            --project "AI Verify" \
             -u $TESTRAIL_USERNAME \
             -p $TESTRAIL_PASSWORD \
             parse_junit \
-            --title "Playwright Automated Test Run" \
+            --title "AI Verify" \
             --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
             -f "./js/test-results/junit-report.xml"
