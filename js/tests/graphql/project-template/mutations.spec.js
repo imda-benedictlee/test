@@ -158,7 +158,7 @@ const UPDATE_PROJECT_TEMPLATE = `mutation DeleteProjectTemplate($updateProjectTe
 
 test.describe('Create Project Template', () => {
 
-    test.skip('Create Project Template with Valid Inputs', async () => {
+    test('Create Project Template with Valid Inputs', async () => {
 
         //Send Request
         const response = await axios.post(ENDPOINT, {
@@ -193,7 +193,7 @@ test.describe('Create Project Template', () => {
         expect(projectTemplateInfo.globalVars[1].value).toBe(projectTemplateInfoObj.globalVars[1].value)
     })
 
-    test.skip('Create Project Template with NULL Project Information', async () => {
+    test('Create Project Template with NULL Project Information', async () => {
 
         // GraphQL Query
         const gqlQuery = `mutation CreateProjectTemplate($projectTemplate: ProjectTemplateInput!) {
@@ -239,7 +239,7 @@ test.describe('Create Project Template', () => {
 
     })
 
-    test.skip('Create Project Template with Integer Project Information', async () => {
+    test('Create Project Template with Integer Project Information', async () => {
 
         // GraphQL Query
         const gqlQuery = `mutation CreateProjectTemplate($projectTemplate: ProjectTemplateInput!) {
@@ -288,7 +288,7 @@ test.describe('Create Project Template', () => {
 
     })
 
-    test.skip('Create Project Template with Empty Project Information', async () => {
+    test('Create Project Template with Empty Project Information', async () => {
 
         // GraphQL Query
         const gqlQuery = `mutation CreateProjectTemplate($projectTemplate: ProjectTemplateInput!) {
@@ -343,7 +343,7 @@ test.describe('Create Project Template', () => {
 
     })
 
-    test.skip('Create Project Template with Invalid Global Variable', async () => {
+    test('Create Project Template with Invalid Global Variable', async () => {
 
         // GraphQL Query
         const gqlQuery = `mutation Mutation($projectTemplate: ProjectTemplateInput!) {
@@ -454,7 +454,7 @@ test.describe('Create Project Template', () => {
 
     })
 
-    test.skip('Create Project Template with Invalid Pages', async () => {
+    test('Create Project Template with Invalid Pages', async () => {
 
         // GraphQL Query
         const gqlQuery = `mutation Mutation($projectTemplate: ProjectTemplateInput!) {
@@ -598,7 +598,7 @@ test.describe('Create Project Template', () => {
 
     })
 
-    test.skip('Create Project Template with Empty Pages', async () => {
+    test('Create Project Template with Empty Pages', async () => {
 
         // GraphQL Query
         const gqlQuery = `mutation Mutation($projectTemplate: ProjectTemplateInput!) {
@@ -672,7 +672,7 @@ test.describe('Create Project Template', () => {
     })
 })
 
-test.skip('Clone Project Template', () => {
+test.describe('Clone Project Template', () => {
 
     let projectTemplateId
     let projectTemplate
@@ -711,7 +711,7 @@ test.skip('Clone Project Template', () => {
         expect(clonedProjectTemplateObj.projectInfo.company).toBe(projectTemplate.projectInfo.company)
     })
 
-    test.skip('Clone Project Template by Invalid Project Template ID', async () => {
+    test('Clone Project Template by Invalid Project Template ID', async () => {
 
         // Get Current Count of Records
         const currentCount = await projects.countDocuments()
@@ -774,7 +774,7 @@ test.skip('Clone Project Template', () => {
         expect(newCount).toEqual(currentCount)
     })
 
-    test.skip('Clone Project Template by Empty Project Template ID', async () => {
+    test('Clone Project Template by Empty Project Template ID', async () => {
 
         // Get Current Count of Records
         const currentCount = await projects.countDocuments()
@@ -818,7 +818,7 @@ test.describe('Delete Project Template', () => {
         projectTemplateId = projectTemplate.id
     })
 
-    test.skip('Delete Project Template by Project Template ID', async () => {
+    test('Delete Project Template by Project Template ID', async () => {
 
         // Send Request
         const response = await axios.post(ENDPOINT, {
@@ -838,7 +838,7 @@ test.describe('Delete Project Template', () => {
         expect(deletedProjectTemplateObj).toBeNull
     })
 
-    test.skip('Delete Project Template by Invalid Project Template ID', async () => {
+    test('Delete Project Template by Invalid Project Template ID', async () => {
 
         // Get Current Count of Records
         const currentCount = await projects.countDocuments()
@@ -901,7 +901,7 @@ test.describe('Delete Project Template', () => {
         expect(newCount).toEqual(currentCount)
     })
 
-    test.skip('Delete Project Template by Empty Project Template ID', async () => {
+    test('Delete Project Template by Empty Project Template ID', async () => {
 
         // Get Current Count of Records
         const currentCount = await projects.countDocuments()
@@ -927,7 +927,7 @@ test.describe('Delete Project Template', () => {
     })
 })
 
-test.skip('Update Project Template', () => {
+test.describe('Update Project Template', () => {
 
     let projectTemplateId
     let projectTemplate
@@ -945,7 +945,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template by Project Template ID', async () => {
+    test('Update Project Template by Project Template ID', async () => {
 
         const data = "Template 10"
 
@@ -976,7 +976,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template with Invalid Project Template ID', async () => {
+    test('Update Project Template with Invalid Project Template ID', async () => {
 
         const data = "Template 19"
 
@@ -1065,7 +1065,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template with Empty Project Template ID', async () => {
+    test('Update Project Template with Empty Project Template ID', async () => {
 
         const data = "Template 45"
 
@@ -1098,7 +1098,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template with Valid Inputs', async () => {
+    test('Update Project Template with Valid Inputs', async () => {
 
         const data = {
             "name": "Template 3",
@@ -1154,7 +1154,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template with Invalid Project Information', async () => {
+    test('Update Project Template with Invalid Project Information', async () => {
 
         // Test For Null Project Information
         let response = await axios.post(ENDPOINT, {
@@ -1216,7 +1216,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template with Empty Project Information', async () => {
+    test('Update Project Template with Empty Project Information', async () => {
 
         const data = ""
 
@@ -1313,7 +1313,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template with Empty Global Variables', async () => {
+    test('Update Project Template with Empty Global Variables', async () => {
 
         const data = ""
 
@@ -1349,7 +1349,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template with Invalid Pages', async () => {
+    test('Update Project Template with Invalid Pages', async () => {
 
         // Test For Null Values in Layouts
         let response = await axios.post(ENDPOINT, {
@@ -1461,7 +1461,7 @@ test.skip('Update Project Template', () => {
 
     })
 
-    test.skip('Update Project Template with Empty Pages', async () => {
+    test('Update Project Template with Empty Pages', async () => {
 
         const data = ""
 

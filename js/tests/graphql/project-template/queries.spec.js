@@ -6,7 +6,7 @@ import axios from 'axios';
 const ENDPOINT = "http://localhost:4000/graphql"
 
 const uri =
-  "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1";
+  "mongodb://mongodb:mongodb@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1";
 const mongoClient = new MongoClient(uri)
 const database = mongoClient.db('aiverify')
 export const projects = database.collection('projecttemplatemodels')
@@ -174,7 +174,7 @@ const GET_PROJECT_TEMPLATES = `query ProjectTemplates {
   
     })
   
-    test.skip('Get Project Templates', async () => {
+    test('Get Project Templates', async () => {
   
       // Get All Project Templates
       const response = await axios.post(ENDPOINT, {
@@ -223,7 +223,7 @@ const GET_PROJECT_TEMPLATES = `query ProjectTemplates {
       expect(Date(output[35].updatedAt)).toBe(Date(projectTemplateInfoObj.updatedAt))
     })
   
-    test.skip('Get Project Template by Project Template Id', async () => {
+    test('Get Project Template by Project Template Id', async () => {
   
       // Get Response
       const response = await axios.post(ENDPOINT, {
@@ -254,7 +254,7 @@ const GET_PROJECT_TEMPLATES = `query ProjectTemplates {
       expect(Date(projectTemplateInfo.updatedAt)).toBe(Date(projectTemplateInfoObj.updatedAt))
     })
   
-    test.skip('Get Project Template by Invalid Project Template Id', async () => {
+    test('Get Project Template by Invalid Project Template Id', async () => {
   
       // Test For NULL Project Template ID
       let response = await axios.post(ENDPOINT, {
@@ -296,7 +296,7 @@ const GET_PROJECT_TEMPLATES = `query ProjectTemplates {
       expect(errorMessage[0].message).toBe('Variable "$projectTemplateId" got invalid value "63e207c7fb46f9de3ab2508"; Value is not a valid mongodb object id of form: 63e207c7fb46f9de3ab2508')
     })
   
-    test.skip('Get Project Template by Empty Project Template Id', async () => {
+    test('Get Project Template by Empty Project Template Id', async () => {
   
       // Get Response
       const response = await axios.post(ENDPOINT, {
