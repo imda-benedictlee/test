@@ -6,7 +6,7 @@ import axios from 'axios';
 const ENDPOINT = "http://localhost:4000/graphql"
 
 const uri =
-  "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1";
+  "mongodb://mongodb:mongodb@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1";
 const mongoClient = new MongoClient(uri)
 const database = mongoClient.db('aiverify')
 export const projects = database.collection('projecttemplatemodels')
@@ -49,6 +49,9 @@ const GET_REPORT_BY_PROJECT_ID = `query Query($projectId: ObjectID!) {
 test.describe('Get Project', () => {
 
   test('Get Projects', async () => {
+
+    test.info().annotations.push({ type: 'testrail_case_field', description: 'preconds:Test Pre-conditions' });
+    test.info().annotations.push({ type: 'testrail_result_field', description: 'version:AI Verify 1.0.0' });
 
     // Get Response
     const response = await axios.post(ENDPOINT, {
