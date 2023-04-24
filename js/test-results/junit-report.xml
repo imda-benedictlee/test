@@ -1,54 +1,76 @@
-<testsuites id="" name="" tests="42" failures="16" skipped="3" errors="0" time="1.9000409999999683">
-<testsuite name="graphql/project/mutations.spec.js" timestamp="1678107325927" hostname="" tests="25" failures="9" skipped="0" time="0.874" errors="0">
-<testcase name="Get Project Get Projects" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Projects" time="0.097">
+<testsuites id="" name="" tests="53" failures="35" skipped="0" errors="0" time="3.099896999999881">
+<testsuite name="graphql/project/mutations.spec.js" timestamp="1682348364016" hostname="" tests="25" failures="10" skipped="0" time="1.038" errors="0">
+<testcase name="Get Project Get Projects" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Projects" time="0.053">
+<properties>
+<property name="testrail_case_field" value="preconds:Test Pre-conditions">
+</property>
+<property name="testrail_result_field" value="version:AI Verify 1.0.0">
+</property>
+</properties>
+<failure message="queries.spec.js:51:3 Get Projects" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project/queries.spec.js:51:3 › Get Project › Get Projects ===================
+
+    TypeError: Cannot read properties of undefined (reading 'projectInfo')
+
+      65 |
+      66 |     // Assert Response
+    > 67 |     expect(output[0].projectInfo.name).toBe(projectInfoObj[0].projectInfo.name)
+         |                      ^
+      68 |     expect(output[0].projectInfo.description).toBe(projectInfoObj[0].projectInfo.description)
+      69 |     expect(output[0].projectInfo.reportTitle).toBe(projectInfoObj[0].projectInfo.reportTitle)
+      70 |     expect(output[0].projectInfo.company).toBe(projectInfoObj[0].projectInfo.company)
+
+        at /home/benflop/GitHub/test/js/tests/graphql/project/queries.spec.js:67:22
+]]>
+</failure>
 </testcase>
-<testcase name="Get Project Get Project By Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Project ID" time="0.052">
-<failure message="queries.spec.js:75:3 Get Project By Project ID" type="FAILURE">
-<![CDATA[  [chromium] › graphql/project/queries.spec.js:75:3 › Get Project › Get Project By Project ID ======
+<testcase name="Get Project Get Project By Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Project ID" time="0.084">
+<failure message="queries.spec.js:78:3 Get Project By Project ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project/queries.spec.js:78:3 › Get Project › Get Project By Project ID ======
 
     TypeError: Cannot read properties of null (reading 'projectInfo')
 
-      90 |
-      91 |     // Assert Response
-    > 92 |     expect(output.projectInfo.name).toBe(projectInfoObj.projectInfo.name)
+      93 |
+      94 |     // Assert Response
+    > 95 |     expect(output.projectInfo.name).toBe(projectInfoObj.projectInfo.name)
          |                   ^
-      93 |     expect(output.projectInfo.description).toBe(projectInfoObj.projectInfo.description)
-      94 |     expect(output.projectInfo.reportTitle).toBe(projectInfoObj.projectInfo.reportTitle)
-      95 |     expect(output.projectInfo.company).toBe(projectInfoObj.projectInfo.company)
+      96 |     expect(output.projectInfo.description).toBe(projectInfoObj.projectInfo.description)
+      97 |     expect(output.projectInfo.reportTitle).toBe(projectInfoObj.projectInfo.reportTitle)
+      98 |     expect(output.projectInfo.company).toBe(projectInfoObj.projectInfo.company)
 
-        at /home/benflop/GitHub/test/js/tests/graphql/project/queries.spec.js:92:19
+        at /home/benflop/GitHub/test/js/tests/graphql/project/queries.spec.js:95:19
 ]]>
 </failure>
 </testcase>
-<testcase name="Get Project Get Project By Invalid Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Invalid Project ID" time="0.03">
+<testcase name="Get Project Get Project By Invalid Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Invalid Project ID" time="0.037">
 </testcase>
-<testcase name="Get Project Get Project By Empty Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Empty Project ID" time="0.056">
+<testcase name="Get Project Get Project By Empty Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Project › Get Project By Empty Project ID" time="0.033">
 </testcase>
-<testcase name="Get Reports Get Report By Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Project ID" time="0.059">
-<failure message="queries.spec.js:134:3 Get Report By Project ID" type="FAILURE">
-<![CDATA[  [chromium] › graphql/project/queries.spec.js:134:3 › Get Reports › Get Report By Project ID ======
+<testcase name="Get Reports Get Report By Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Project ID" time="0.078">
+<failure message="queries.spec.js:137:3 Get Report By Project ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project/queries.spec.js:137:3 › Get Reports › Get Report By Project ID ======
 
     TypeError: Cannot read properties of null (reading 'report')
 
-      146 |     // Get Report directly from MongoDB
-      147 |     const query = { _id: ObjectId("63c9fa927bb6a2b36229fa00") }
-    > 148 |     const reportId = (await projects.findOne(query)).report
+      149 |     // Get Report directly from MongoDB
+      150 |     const query = { _id: ObjectId("63c9fa927bb6a2b36229fa00") }
+    > 151 |     const reportId = (await projects.findOne(query)).report
           |                                                      ^
-      149 |
-      150 |     const query2 = { _id: ObjectId(reportId) }
-      151 |     const reportInfoObj = (await reports.findOne(query2))
+      152 |
+      153 |     const query2 = { _id: ObjectId(reportId) }
+      154 |     const reportInfoObj = (await reports.findOne(query2))
 
-        at /home/benflop/GitHub/test/js/tests/graphql/project/queries.spec.js:148:54
+        at /home/benflop/GitHub/test/js/tests/graphql/project/queries.spec.js:151:54
 ]]>
 </failure>
 </testcase>
-<testcase name="Get Reports Get Report By Invalid Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Invalid Project ID" time="0.091">
+<testcase name="Get Reports Get Report By Invalid Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Invalid Project ID" time="0.079">
 </testcase>
-<testcase name="Get Reports Get Report By Empty Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Empty Project ID" time="0.033">
+<testcase name="Get Reports Get Report By Empty Project ID" classname="[chromium] › graphql/project/queries.spec.js › Get Reports › Get Report By Empty Project ID" time="0.042">
 </testcase>
-<testcase name="Create Project Project Created" classname="[chromium] › graphql/project/mutations.spec.js › Create Project › Project Created" time="0.038">
+<testcase name="Create Project Project Created" classname="[chromium] › graphql/project/mutations.spec.js › Create Project › Project Created" time="0.065">
 </testcase>
-<testcase name="Create Project Project Creation Failed" classname="[chromium] › graphql/project/mutations.spec.js › Create Project › Project Creation Failed" time="0.028">
+<testcase name="Create Project Project Creation Failed" classname="[chromium] › graphql/project/mutations.spec.js › Create Project › Project Creation Failed" time="0.035">
 <failure message="mutations.spec.js:111:5 Project Creation Failed" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project/mutations.spec.js:111:5 › Create Project › Project Creation Failed ==
 
@@ -66,7 +88,7 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="Update Project Project Updated" classname="[chromium] › graphql/project/mutations.spec.js › Update Project › Project Updated" time="0.029">
+<testcase name="Update Project Project Updated" classname="[chromium] › graphql/project/mutations.spec.js › Update Project › Project Updated" time="0.017">
 <failure message="mutations.spec.js:129:5 Project Updated" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project/mutations.spec.js:129:5 › Update Project › Project Updated ==========
 
@@ -84,9 +106,9 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="Update Project Invalid ID" classname="[chromium] › graphql/project/mutations.spec.js › Update Project › Invalid ID" time="0.036">
+<testcase name="Update Project Invalid ID" classname="[chromium] › graphql/project/mutations.spec.js › Update Project › Invalid ID" time="0.026">
 </testcase>
-<testcase name="Delete Project Project Deleted" classname="[chromium] › graphql/project/mutations.spec.js › Delete Project › Project Deleted" time="0.022">
+<testcase name="Delete Project Project Deleted" classname="[chromium] › graphql/project/mutations.spec.js › Delete Project › Project Deleted" time="0.038">
 <failure message="mutations.spec.js:183:5 Project Deleted" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project/mutations.spec.js:183:5 › Delete Project › Project Deleted ==========
 
@@ -104,9 +126,9 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="Delete Project Invalid ID" classname="[chromium] › graphql/project/mutations.spec.js › Delete Project › Invalid ID" time="0.038">
+<testcase name="Delete Project Invalid ID" classname="[chromium] › graphql/project/mutations.spec.js › Delete Project › Invalid ID" time="0.021">
 </testcase>
-<testcase name="Clone Project Project Cloned" classname="[chromium] › graphql/project/mutations.spec.js › Clone Project › Project Cloned" time="0.006">
+<testcase name="Clone Project Project Cloned" classname="[chromium] › graphql/project/mutations.spec.js › Clone Project › Project Cloned" time="0.017">
 <failure message="mutations.spec.js:226:5 Project Cloned" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project/mutations.spec.js:226:5 › Clone Project › Project Cloned ============
 
@@ -126,7 +148,7 @@
 </testcase>
 <testcase name="Clone Project Invalid ID" classname="[chromium] › graphql/project/mutations.spec.js › Clone Project › Invalid ID" time="0.001">
 </testcase>
-<testcase name="Generate Report Report Generated" classname="[chromium] › graphql/project/mutations.spec.js › Generate Report › Report Generated" time="0.05">
+<testcase name="Generate Report Report Generated" classname="[chromium] › graphql/project/mutations.spec.js › Generate Report › Report Generated" time="0.045">
 <failure message="mutations.spec.js:254:5 Report Generated" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project/mutations.spec.js:254:5 › Generate Report › Report Generated ========
 
@@ -147,7 +169,7 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="Generate Report Report Generation In Progress" classname="[chromium] › graphql/project/mutations.spec.js › Generate Report › Report Generation In Progress" time="0.013">
+<testcase name="Generate Report Report Generation In Progress" classname="[chromium] › graphql/project/mutations.spec.js › Generate Report › Report Generation In Progress" time="0.018">
 <failure message="mutations.spec.js:277:5 Report Generation In Progress" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project/mutations.spec.js:277:5 › Generate Report › Report Generation In Progress 
 
@@ -168,21 +190,21 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="Cancel Test Run Cancel Test Run with Valid Project ID &amp; With Report" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Valid Project ID &amp; With Report" time="0.041">
+<testcase name="Cancel Test Run Cancel Test Run with Valid Project ID &amp; With Report" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Valid Project ID &amp; With Report" time="0.086">
 </testcase>
-<testcase name="Cancel Test Run Cancel Test Run with Invalid ID" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Invalid ID" time="0.005">
+<testcase name="Cancel Test Run Cancel Test Run with Invalid ID" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Invalid ID" time="0.04">
 </testcase>
-<testcase name="Cancel Test Run Cancel Test Run with Empty ID" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Empty ID" time="0.04">
+<testcase name="Cancel Test Run Cancel Test Run with Empty ID" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Empty ID" time="0.049">
 </testcase>
-<testcase name="Cancel Test Run Cancel Test Run with No Report" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with No Report" time="0.009">
+<testcase name="Cancel Test Run Cancel Test Run with No Report" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with No Report" time="0.016">
 </testcase>
-<testcase name="Cancel Test Run Cancel Test Run with Generating Report" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Generating Report" time="0.087">
+<testcase name="Cancel Test Run Cancel Test Run with Generating Report" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Generating Report" time="0.12">
 </testcase>
 <testcase name="Cancel Test Run Cancel Test Run with Running Test" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Running Test" time="0.001">
 </testcase>
-<testcase name="Cancel Test Run Cancel Test Run with Pending Test" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Pending Test" time="0.001">
+<testcase name="Cancel Test Run Cancel Test Run with Pending Test" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Pending Test" time="0.009">
 </testcase>
-<testcase name="Cancel Test Run Cancel Test Run with Report Generated" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Report Generated" time="0.011">
+<testcase name="Cancel Test Run Cancel Test Run with Report Generated" classname="[chromium] › graphql/project/mutations.spec.js › Cancel Test Run › Cancel Test Run with Report Generated" time="0.028">
 <failure message="mutations.spec.js:435:5 Cancel Test Run with Report Generated" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project/mutations.spec.js:435:5 › Cancel Test Run › Cancel Test Run with Report Generated 
 
@@ -204,190 +226,340 @@
 </failure>
 </testcase>
 </testsuite>
-<testsuite name="graphql/project-template/mutations.spec.js" timestamp="1678107325927" hostname="" tests="17" failures="7" skipped="3" time="0.453" errors="0">
-<testcase name="Get Project Template Get Project Templates" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Templates" time="0.001">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
+<testsuite name="graphql/project-template/mutations.spec.js" timestamp="1682348364016" hostname="" tests="28" failures="25" skipped="0" time="0.95" errors="0">
+<testcase name="Get Project Template Get Project Templates" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Templates" time="0.023">
+<failure message="queries.spec.js:177:5 Get Project Templates" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/queries.spec.js:177:5 › Get Project Template › Get Project Templates 
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+      183 |   
+      184 |       const output = response.data.data.projectTemplates
+    > 185 |       let projectTemplateId = output[33].id
+          |                                          ^
+      186 |   
+      187 |       // Get 34th Project Template Info directly from MongoDB
+      188 |       let query = { _id: ObjectId(projectTemplateId) }
+
+        at /home/benflop/GitHub/test/js/tests/graphql/project-template/queries.spec.js:185:42
+]]>
+</failure>
 </testcase>
-<testcase name="Get Project Template Get Project Template by Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Project Template Id" time="0.039">
+<testcase name="Get Project Template Get Project Template by Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Project Template Id" time="0.042">
+<failure message="queries.spec.js:226:5 Get Project Template by Project Template Id" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/queries.spec.js:226:5 › Get Project Template › Get Project Template by Project Template Id 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
 </testcase>
-<testcase name="Get Project Template Get Project Template by Invalid Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Invalid Project Template Id" time="0.013">
+<testcase name="Get Project Template Get Project Template by Invalid Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Invalid Project Template Id" time="0.018">
 </testcase>
-<testcase name="Get Project Template Get Project Template by Empty Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Empty Project Template Id" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
+<testcase name="Get Project Template Get Project Template by Empty Project Template Id" classname="[chromium] › graphql/project-template/queries.spec.js › Get Project Template › Get Project Template by Empty Project Template Id" time="0.018">
 </testcase>
-<testcase name="Create Project Template Create Project Template with Valid Inputs" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Valid Inputs" time="0.039">
+<testcase name="Create Project Template Create Project Template with Valid Inputs" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Valid Inputs" time="0.091">
+<failure message="mutations.spec.js:161:5 Create Project Template with Valid Inputs" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:161:5 › Create Project Template › Create Project Template with Valid Inputs 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
 </testcase>
-<testcase name="Create Project Template Create Project Template with NULL Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with NULL Project Information" time="0.075">
+<testcase name="Create Project Template Create Project Template with NULL Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with NULL Project Information" time="0.043">
 <failure message="mutations.spec.js:196:5 Create Project Template with NULL Project Information" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:196:5 › Create Project Template › Create Project Template with NULL Project Information 
 
-    Error: expect(received).toEqual(expected) // deep equality
+    MongoServerError: command aggregate requires authentication
 
-    Expected: 96
-    Received: 97
-
-      236 |
-      237 |         //Assert Record Counts
-    > 238 |         expect(newCount).toEqual(currentCount)
-          |                          ^
-      239 |
-      240 |     })
-      241 |
-
-        at /home/benflop/GitHub/test/js/tests/graphql/project-template/mutations.spec.js:238:26
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
 ]]>
 </failure>
 </testcase>
-<testcase name="Create Project Template Create Project Template with Integer Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Integer Project Information" time="0.009">
+<testcase name="Create Project Template Create Project Template with Integer Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Integer Project Information" time="0.038">
+<failure message="mutations.spec.js:242:5 Create Project Template with Integer Project Information" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:242:5 › Create Project Template › Create Project Template with Integer Project Information 
+
+    MongoServerError: command aggregate requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
 </testcase>
-<testcase name="Create Project Template Create Project Template with Empty Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Project Information" time="0.012">
+<testcase name="Create Project Template Create Project Template with Empty Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Project Information" time="0.036">
 <failure message="mutations.spec.js:291:5 Create Project Template with Empty Project Information" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:291:5 › Create Project Template › Create Project Template with Empty Project Information 
 
-    Error: expect(received).toEqual(expected) // deep equality
+    MongoServerError: command aggregate requires authentication
 
-    Expected: 92
-    Received: 93
-
-      340 |
-      341 |         // Assert Record Counts
-    > 342 |         expect(newCount).toEqual(currentCount)
-          |                          ^
-      343 |
-      344 |     })
-      345 |
-
-        at /home/benflop/GitHub/test/js/tests/graphql/project-template/mutations.spec.js:342:26
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
 ]]>
 </failure>
 </testcase>
-<testcase name="Create Project Template Create Project Template with Invalid Global Variable" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Invalid Global Variable" time="0.079">
+<testcase name="Create Project Template Create Project Template with Invalid Global Variable" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Invalid Global Variable" time="0.041">
 <failure message="mutations.spec.js:346:5 Create Project Template with Invalid Global Variable" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:346:5 › Create Project Template › Create Project Template with Invalid Global Variable 
 
-    Error: expect(received).toEqual(expected) // deep equality
+    MongoServerError: command aggregate requires authentication
 
-    Expected: 99
-    Received: 100
-
-      401 |
-      402 |         // Assert Record Counts
-    > 403 |         expect(newCount).toEqual(currentCount)
-          |                          ^
-      404 |
-      405 |     })
-      406 |
-
-        at /home/benflop/GitHub/test/js/tests/graphql/project-template/mutations.spec.js:403:26
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
 ]]>
 </failure>
 </testcase>
-<testcase name="Create Project Template Create Project Template with Empty Global Variable" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Global Variable" time="0.036">
+<testcase name="Create Project Template Create Project Template with Empty Global Variable" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Global Variable" time="0.033">
 <failure message="mutations.spec.js:407:5 Create Project Template with Empty Global Variable" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:407:5 › Create Project Template › Create Project Template with Empty Global Variable 
 
-    TypeError: Cannot read properties of null (reading 'globalVars')
+    MongoServerError: command aggregate requires authentication
 
-      444 |
-      445 |         // Assert Response
-    > 446 |         expect(projectTemplateInfo.globalVars.key).toBe(projectTemplateInfoObj.globalVars.key)
-          |                                                                                ^
-      447 |         expect(projectTemplateInfo.globalVars.value).toBe(projectTemplateInfoObj.globalVars.value)
-      448 |
-      449 |         // Get New Count of Records
-
-        at /home/benflop/GitHub/test/js/tests/graphql/project-template/mutations.spec.js:446:80
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
 ]]>
 </failure>
 </testcase>
-<testcase name="Create Project Template Create Project Template with Invalid Pages" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Invalid Pages" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
+<testcase name="Create Project Template Create Project Template with Invalid Pages" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Invalid Pages" time="0.034">
+<failure message="mutations.spec.js:457:5 Create Project Template with Invalid Pages" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:457:5 › Create Project Template › Create Project Template with Invalid Pages 
+
+    MongoServerError: command aggregate requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
 </testcase>
-<testcase name="Create Project Template Create Project Template with Empty Pages" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Pages" time="0.066">
+<testcase name="Create Project Template Create Project Template with Empty Pages" classname="[chromium] › graphql/project-template/mutations.spec.js › Create Project Template › Create Project Template with Empty Pages" time="0.04">
 <failure message="mutations.spec.js:601:5 Create Project Template with Empty Pages" type="FAILURE">
 <![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:601:5 › Create Project Template › Create Project Template with Empty Pages 
 
-    Error: expect(received).toEqual(expected) // deep equality
+    MongoServerError: command aggregate requires authentication
 
-    Expected: 100
-    Received: 101
-
-      668 |
-      669 |         // Assert Record Counts
-    > 670 |         expect(newCount).toEqual(currentCount)
-          |                          ^
-      671 |
-      672 |     })
-      673 | })
-
-        at /home/benflop/GitHub/test/js/tests/graphql/project-template/mutations.spec.js:670:26
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
 ]]>
 </failure>
 </testcase>
-<testcase name="Clone Project Template" classname="[chromium] › graphql/project-template/mutations.spec.js › Clone Project Template" time="0.003">
-<failure message="mutations.spec.js:675:1 Clone Project Template" type="FAILURE">
-<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:675:1 › Clone Project Template ===========
+<testcase name="Clone Project Template Clone Project Template by Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Clone Project Template › Clone Project Template by Project Template ID" time="0.038">
+<failure message="mutations.spec.js:692:5 Clone Project Template by Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:692:5 › Clone Project Template › Clone Project Template by Project Template ID 
 
-    Error: tests/graphql/project-template/mutations.spec.js:680:10: Playwright Test did not expect test.beforeAll() to be called here.
-    Most common reasons include:
-    - You are calling test.beforeAll() in a configuration file.
-    - You are calling test.beforeAll() in a file that is imported by the configuration file.
-    - You have two different versions of @playwright/test. This usually happens
-      when one of the dependencies in your package.json depends on @playwright/test.
+    MongoServerError: command find requires authentication
 
-      678 |     let projectTemplate
-      679 |
-    > 680 |     test.beforeAll(async () => {
-          |          ^
-      681 |
-      682 |         const response = await axios.post(ENDPOINT, {
-      683 |             query: CREATE_PROJECT_TEMPLATE,
-
-        at /home/benflop/GitHub/test/js/tests/graphql/project-template/mutations.spec.js:680:10
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
 ]]>
 </failure>
 </testcase>
-<testcase name="Delete Project Template Delete Project Template by Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Project Template ID" time="0.031">
-</testcase>
-<testcase name="Delete Project Template Delete Project Template by Invalid Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Invalid Project Template ID" time="0.028">
-</testcase>
-<testcase name="Delete Project Template Delete Project Template by Empty Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Empty Project Template ID" time="0.013">
-</testcase>
-<testcase name="Update Project Template" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template" time="0.009">
-<failure message="mutations.spec.js:930:1 Update Project Template" type="FAILURE">
-<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:930:1 › Update Project Template ==========
+<testcase name="Clone Project Template Clone Project Template by Invalid Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Clone Project Template › Clone Project Template by Invalid Project Template ID" time="0.026">
+<failure message="mutations.spec.js:714:5 Clone Project Template by Invalid Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:714:5 › Clone Project Template › Clone Project Template by Invalid Project Template ID 
 
-    Error: tests/graphql/project-template/mutations.spec.js:935:10: Playwright Test did not expect test.beforeAll() to be called here.
-    Most common reasons include:
-    - You are calling test.beforeAll() in a configuration file.
-    - You are calling test.beforeAll() in a file that is imported by the configuration file.
-    - You have two different versions of @playwright/test. This usually happens
-      when one of the dependencies in your package.json depends on @playwright/test.
+    MongoServerError: command aggregate requires authentication
 
-      933 |     let projectTemplate
-      934 |
-    > 935 |     test.beforeAll(async () => {
-          |          ^
-      936 |
-      937 |         const response = await axios.post(ENDPOINT, {
-      938 |             query: CREATE_PROJECT_TEMPLATE,
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Clone Project Template Clone Project Template by Empty Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Clone Project Template › Clone Project Template by Empty Project Template ID" time="0.031">
+<failure message="mutations.spec.js:777:5 Clone Project Template by Empty Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:777:5 › Clone Project Template › Clone Project Template by Empty Project Template ID 
 
-        at /home/benflop/GitHub/test/js/tests/graphql/project-template/mutations.spec.js:935:10
+    MongoServerError: command aggregate requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Delete Project Template Delete Project Template by Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Project Template ID" time="0.035">
+<failure message="mutations.spec.js:821:5 Delete Project Template by Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:821:5 › Delete Project Template › Delete Project Template by Project Template ID 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Delete Project Template Delete Project Template by Invalid Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Invalid Project Template ID" time="0.024">
+<failure message="mutations.spec.js:841:5 Delete Project Template by Invalid Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:841:5 › Delete Project Template › Delete Project Template by Invalid Project Template ID 
+
+    MongoServerError: command aggregate requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Delete Project Template Delete Project Template by Empty Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Delete Project Template › Delete Project Template by Empty Project Template ID" time="0.025">
+<failure message="mutations.spec.js:904:5 Delete Project Template by Empty Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:904:5 › Delete Project Template › Delete Project Template by Empty Project Template ID 
+
+    MongoServerError: command aggregate requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template by Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template by Project Template ID" time="0.039">
+<failure message="mutations.spec.js:948:5 Update Project Template by Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:948:5 › Update Project Template › Update Project Template by Project Template ID 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template with Invalid Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Invalid Project Template ID" time="0.029">
+<failure message="mutations.spec.js:979:5 Update Project Template with Invalid Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:979:5 › Update Project Template › Update Project Template with Invalid Project Template ID 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template with Empty Project Template ID" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Empty Project Template ID" time="0.035">
+<failure message="mutations.spec.js:1068:5 Update Project Template with Empty Project Template ID" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:1068:5 › Update Project Template › Update Project Template with Empty Project Template ID 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template with Valid Inputs" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Valid Inputs" time="0.03">
+<failure message="mutations.spec.js:1101:5 Update Project Template with Valid Inputs" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:1101:5 › Update Project Template › Update Project Template with Valid Inputs 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template with Invalid Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Invalid Project Information" time="0.024">
+<failure message="mutations.spec.js:1157:5 Update Project Template with Invalid Project Information" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:1157:5 › Update Project Template › Update Project Template with Invalid Project Information 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template with Empty Project Information" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Empty Project Information" time="0.033">
+<failure message="mutations.spec.js:1219:5 Update Project Template with Empty Project Information" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:1219:5 › Update Project Template › Update Project Template with Empty Project Information 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template with Invalid Global Variables" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Invalid Global Variables" time="0.039">
+<failure message="mutations.spec.js:1252:5 Update Project Template with Invalid Global Variables" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:1252:5 › Update Project Template › Update Project Template with Invalid Global Variables 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template with Empty Global Variables" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Empty Global Variables" time="0.029">
+<failure message="mutations.spec.js:1316:5 Update Project Template with Empty Global Variables" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:1316:5 › Update Project Template › Update Project Template with Empty Global Variables 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
+]]>
+</failure>
+</testcase>
+<testcase name="Update Project Template Update Project Template with Invalid Pages" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Invalid Pages" time="0.021">
+</testcase>
+<testcase name="Update Project Template Update Project Template with Empty Pages" classname="[chromium] › graphql/project-template/mutations.spec.js › Update Project Template › Update Project Template with Empty Pages" time="0.035">
+<failure message="mutations.spec.js:1464:5 Update Project Template with Empty Pages" type="FAILURE">
+<![CDATA[  [chromium] › graphql/project-template/mutations.spec.js:1464:5 › Update Project Template › Update Project Template with Empty Pages 
+
+    MongoServerError: command find requires authentication
+
+        at Connection.onMessage (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:440:20)
+        at MessageStream.<anonymous> (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/connection.ts:240:56)
+        at processIncomingData (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:189:12)
+        at MessageStream._write (/home/benflop/GitHub/test/js/node_modules/mongodb/src/cmap/message_stream.ts:70:5)
 ]]>
 </failure>
 </testcase>
