@@ -29,7 +29,7 @@ jobs:
             --title "AI Verify" \
             --result-fields "os:Ubuntu 22.04" \
             --case-fields "refs:TEST-2" \
-            --milestone-id "Version 1.0" \
+            --milestone-id "1" \
             --run-id "1" \
             --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
             -f "./js/test-results/junit-report.xml"
