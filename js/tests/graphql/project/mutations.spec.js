@@ -92,7 +92,7 @@ const PROJECT_VARIABLES = {
     }
 }
 
-test.skip('Create Project', () => {
+test.describe('Create Project', () => {
 
     test('Project Created', async () => {
 
@@ -124,7 +124,7 @@ test.skip('Create Project', () => {
 
 })
 
-test.skip('Update Project', () => {
+test.describe('Update Project', () => {
 
     test('Project Updated', async () => {
 
@@ -178,7 +178,7 @@ test.skip('Update Project', () => {
 
 })
 
-test.skip('Delete Project', () => {
+test.describe('Delete Project', () => {
 
     test('Project Deleted', async () => {
 
@@ -221,7 +221,7 @@ test.skip('Delete Project', () => {
 
 })
 
-test.skip('Clone Project', () => {
+test.describe('Clone Project', () => {
 
     test('Project Cloned', async () => {
 
@@ -249,7 +249,7 @@ test.skip('Clone Project', () => {
     })
 })
 
-test.skip('Generate Report', () => {
+test.describe('Generate Report', () => {
 
     test('Report Generated', async () => {
 
@@ -294,7 +294,7 @@ test.skip('Generate Report', () => {
 
 })
 
-test.skip('Cancel Test Run', () => {
+test.describe('Cancel Test Run', () => {
 
     test('Cancel Test Run with Valid Project ID & With Report', async () => {
 
