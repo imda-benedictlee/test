@@ -30,6 +30,5 @@ jobs:
             --result-fields "os:Ubuntu 22.04" \
             --case-fields "refs:TEST-2" \
             --milestone-id "1" \
-            --run-id "3" \
             --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
             -f "./js/test-results/junit-report.xml"
