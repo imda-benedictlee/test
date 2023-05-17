@@ -11,7 +11,7 @@ const testRailOptions = {
   // Whether to add <properties> with all annotations; default is false
   embedAnnotationsAsProperties: true,
 
-  textContentAnnotations: ['testrail_case_field', 'testrail_result_field'],
+  // textContentAnnotations: ['testrail_case_field'],
 
   // Where to put the report.
   outputFile: './test-results/junit-report.xml'
