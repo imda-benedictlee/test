@@ -48,10 +48,10 @@ const GET_REPORT_BY_PROJECT_ID = `query Query($projectId: ObjectID!) {
 
 test.describe('Get Project', () => {
 
-  test('Get Projects', async () => {
+  test('Get Projects', async ({}, testInfo) => {
 
-    test.info().annotations.push({ type: 'testrail_case_field', description: 'preconds:Test Pre-conditions' });
-    test.info().annotations.push({ type: 'testrail_result_field', description: 'version:AI Verify 1.0.0' });
+    testInfo.annotations.push({ type: 'testrail_case_field', description: 'preconds:Test Pre-conditions' });
+    testInfo.annotations.push({ type: 'testrail_result_field', description: 'version:AI Verify 1.0.0' });
 
     // Get Response
     const response = await axios.post(ENDPOINT, {
